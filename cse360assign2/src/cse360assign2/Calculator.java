@@ -17,6 +17,9 @@ package cse360assign2;
 
 public class Calculator {
 
+	/**
+	 * The current running total of the calculator.
+	 */
 	private int total;
 	
 	/**
@@ -31,7 +34,7 @@ public class Calculator {
 	 * @return the running total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -39,7 +42,7 @@ public class Calculator {
 	 * @param value the integer value to be added to the total
 	 */
 	public void add (int value) {
-		
+		total += value;
 	}
 	
 	/**
@@ -47,7 +50,7 @@ public class Calculator {
 	 * @param value the integer value to be subtracted from the total
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
 	}
 	
 	/**
@@ -55,7 +58,7 @@ public class Calculator {
 	 * @param value the integer value to multiply the current total by
 	 */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
 	
 	/**
@@ -63,7 +66,9 @@ public class Calculator {
 	 * @param value the integer value to divide the total by
 	 */
 	public void divide (int value) {
-		
+		if (value == 0)
+			total = 0;
+		else total /= value;
 	}
 	
 	/**
