@@ -17,16 +17,15 @@ package cse360assign2;
 
 public class Calculator {
 
-	/**
-	 * The current running total of the calculator.
-	 */
 	private int total;
+	private String history;
 	
 	/**
 	 * Class constructor. Initializes total to zero.
 	 */
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/**
@@ -43,6 +42,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		history += (" + " + value);
 	}
 	
 	/**
@@ -51,6 +51,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history += (" - " + value);
 	}
 	
 	/**
@@ -59,6 +60,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history += (" * " + value);
 	}
 	
 	/**
@@ -66,9 +68,11 @@ public class Calculator {
 	 * @param value the integer value to divide the total by
 	 */
 	public void divide (int value) {
-		if (value == 0)
+		if (value == 0) {
 			total = 0;
+		}
 		else total /= value;
+		history += (" / " + value);
 	}
 	
 	/**
@@ -76,6 +80,6 @@ public class Calculator {
 	 * @return the operation history as a formatted string
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
